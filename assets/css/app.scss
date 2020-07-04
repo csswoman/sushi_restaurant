@@ -1,3 +1,9 @@
+@import './modules/variables';
+
+body {
+    background-color: $primary-color;
+}
+
 img {
     max-width: 100%;
 }
@@ -23,6 +29,7 @@ img {
 
 .container {
     grid-column: span 12;
+    padding: $big-padding;
 }
 
 @media (min-width: 960px) {
