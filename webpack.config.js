@@ -14,5 +14,12 @@ module.exports = {
         filename: 'dist/javascript/bundle.js'
     },
     plugins: [htmlWebpack],
-    module: {}
+    module: {
+        rules:[
+            {
+                test: /\.scss$/,
+                use:['style-loader', 'css-loader','sass-loader']
+            }
+        ]
+    }
 }
