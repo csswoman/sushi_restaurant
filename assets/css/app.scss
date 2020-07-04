@@ -1,11 +1,31 @@
+img {
+    max-width: 100%;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
 }
 .main-text {
-    grid-column: 1/5;
+    grid-area: title;
 }
-.main-image{
-    grid-column-start: 5;
-    grid-row-end: 12;
+.main-image {
+    grid-area: image;
+}
+
+.grid-main-area {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas:
+    "title title title title title title title title title"
+    "image image image image image image image image image";
+}
+
+@media (min-width: 960px) {
+    .grid-main-area {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-areas:
+        ". title title image image image image ."
+    }
 }
