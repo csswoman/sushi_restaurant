@@ -7,6 +7,9 @@ let sliderSubTitle = document.querySelector("#slider-subtitle");
 let sliderImage = document.querySelector("#slider-image");
 let textContent = document.querySelector("#slider-text-content")
 
+let leftArrow = document.querySelector(".left-arrow");
+let rightArrow = document.querySelector(".right-arrow");
+
 let slider = new Slider ({
     elements,
     animationFunc: function(element){
@@ -31,7 +34,8 @@ let slider = new Slider ({
     slider.play();
     
 
-    
+  leftArrow.addEventListener('click', slider.prev);
+  rightArrow.addEventListener('click', slider.next);
 
 
         
