@@ -102,6 +102,17 @@ figure {
     }
 }
 
+.slider {
+    header {
+        background-color: $tertiary-color;
+        color: #FFF;
+        padding: $large-padding;
+        h2{
+            margin: 0;
+        }
+    }
+}
+
 .mission {
     align-items: center;
     justify-content: center;
@@ -157,6 +168,11 @@ figure {
         grid-template-areas:
         "title title title image image image image image image"
     }
+
+    .slider {
+        align-items: center;
+    }
+
     .social{
         a{
             display: inline-block;
