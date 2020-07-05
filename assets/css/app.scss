@@ -17,6 +17,11 @@ figure {
     margin: 0px;
 }
 
+.full-height {
+    min-height: 100vh;
+}
+
+
 .btn {
     padding: $large-padding;
     position: relative;
@@ -56,20 +61,13 @@ figure {
     "image image image image image image image image image";
     .text {
         grid-area: title;
-        font-size: 1.2em;
-        line-height: 1.5em;
-        h1 {
-            font-size: $big;
-            font-family: 'Inconsolata', monospace;
-            font-weight: 300;
-            letter-spacing: 0.3em;
-            line-height: 1.5em;
+        @include main-text;
         }
     }
     .image {
         grid-area: image;
     }
-}
+
 
 .container {
     grid-column: span 12;
@@ -99,6 +97,35 @@ figure {
                 font-size: 0.5em;
                 font-weight: 200;
                 margin-top: 6px;
+            }
+        }
+    }
+}
+
+.mission {
+    align-items: center;
+    justify-content: center;
+    .container {
+        @include main-text;
+        font-size: 1.1em;
+        figure {
+            float: right;
+            margin-left: 20px;
+        }
+        p {
+            line-height: 2em;
+            &:nth-of-type(1) {
+                margin-bottom: 3em;
+                position: relative;
+                &::after{
+                    content: '';
+                    background-color: $tertiary-color;
+                    position: absolute;
+                    bottom: -1.5em;
+                    height: 5px;
+                    width: 70%;
+                    z-index: -1;
+                }
             }
         }
     }
