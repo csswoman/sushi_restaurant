@@ -85,6 +85,22 @@ figure {
     &.parallax{
         background-attachment: fixed;
         background-image: url(../../public/images/2.jpeg);
+        position: relative;
+        p {
+            @include caption;
+            display: block;
+            width: 100%;
+            left: 0px;
+            box-sizing: border-box;
+            background-color: $secondary-color;
+            @include text-right;
+            span {
+                display: block;
+                font-size: 0.5em;
+                font-weight: 200;
+                margin-top: 6px;
+            }
+        }
     }
 }
 
