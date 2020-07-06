@@ -80,7 +80,7 @@ figure {
         &::after {
             content: '';
             position: absolute;
-            top: 1.1em;
+            top: 1.2em;
             left: 0;
             width: 100%;
             height: 2px;
@@ -91,6 +91,9 @@ figure {
         }
         &:hover::after {
             transform: scale(1);
+        }
+        &:hover span:not(.main){
+            opacity: 1;
         }
     }
 }
