@@ -1,0 +1,14 @@
+export default class Preloader {
+    static preloadImages ({images, completed}){
+        const promises = images.map(imagePath => Preloader.preloadImages({imagePath}) );
+
+        Promise.all(promises).then(completed);
+    }
+    static preloadImages ({imagePath}){
+        return new Promise ((res, rej)=>{
+            let image = new Image();
+            image.src = imagePath;
+            image.onload = res;
+        })
+    }
+}

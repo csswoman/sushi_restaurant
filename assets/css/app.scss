@@ -107,7 +107,7 @@ figure {
         text-align: right;
         margin-bottom: 10px;
         padding-right: 2em;
-        display: none;
+        display: block;
         .right-arrow,.left-arrow {
             height: 70px;
             @include transition;

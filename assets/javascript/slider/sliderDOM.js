@@ -46,6 +46,7 @@ Preloader.preloadImages({
     document.querySelector(".controls").style.display = "block";
   }
 })
+
         
     
 
