@@ -51,6 +51,51 @@ figure {
     grid-template-columns: repeat(12, 1fr);
 }
 
+.menu-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 100;
+    @include center-vertical-horizontal;
+    @include transition;
+    a {
+        display: block;
+        text-decoration: none;
+        @include text-center;
+        position: relative;
+        margin-top: 1em;
+        &:first-of-type { margin-top: 0;}
+        .main {
+            display: block;
+            font-size: 2em;
+            color: $tertiary-color;
+        }
+        span:not(.main){
+            color: $primary-color;
+            opacity: 0;
+            @include transition;
+            transition-duration: 0.2s;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 1.1em;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $light-color;
+            @include transition;
+            transition-duration: 0.2s;
+            transform: scale(0);
+        }
+        &:hover::after {
+            transform: scale(1);
+        }
+    }
+}
+
+
 .grid-main-area {
     display: grid;
     margin-top: $big-margin-top;
