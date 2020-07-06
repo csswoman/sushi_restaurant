@@ -1,5 +1,6 @@
 import Slider from './slider';
 import elements from './elements';
+import Preloader from '../preloader/preloader'
 
 let sliderText = document.querySelector("#slider-text");
 let sliderTitle = document.querySelector("#slider-title");
@@ -37,7 +38,14 @@ let slider = new Slider ({
   leftArrow.addEventListener('click', slider.prev);
   rightArrow.addEventListener('click', slider.next);
 
+const imagePaths = elements.map(el => el.image);
 
+Preloader.preloadImages({
+  images: imagePaths,
+  completed: function(){
+    document.querySelector(".controls").style.display = "block";
+  }
+})
         
     
 

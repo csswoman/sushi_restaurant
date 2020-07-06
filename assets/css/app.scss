@@ -106,7 +106,8 @@ figure {
     .controls {
         text-align: right;
         margin-bottom: 10px;
-        padding-right: 1em;
+        padding-right: 2em;
+        display: none;
         .right-arrow,.left-arrow {
             height: 70px;
             @include transition;
