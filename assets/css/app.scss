@@ -51,14 +51,47 @@ figure {
     grid-template-columns: repeat(12, 1fr);
 }
 
+.menu {
+    position: fixed;
+    top: 2em;
+    right: 2em;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    border: solid 1px $primary-color;
+    @include center-vertical-horizontal;
+    background-color: #FFF;
+    @include transition;
+    transition-duration: 0.15s;
+    cursor: pointer;
+    img {
+    height: 50px;
+    }
+}
+
 .menu-screen {
     background-color: white;
     height: 100vh;
     width: 100vw;
     position: fixed;
     z-index: 100;
+    top: -101vh;
     @include center-vertical-horizontal;
     @include transition;
+
+    .close {
+        position: absolute;
+        top: 2em;
+        right: 2em;
+        img {
+            height: 45px;
+        }
+    }
+
+    &.active{
+        top: 0;
+    }
+
     a {
         display: block;
         text-decoration: none;
