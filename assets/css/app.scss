@@ -284,6 +284,8 @@ figure {
     width: 100%;
     min-height: 600px;
     margin-top: $big-margin-top;
+    z-index: -1;
+    position: relative;
 }
 
 .social {
