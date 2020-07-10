@@ -6,3 +6,16 @@ self.addEventListener('install', function(){
         cache.addAll(['/index.html']);
     })
 });
+
+self.addEventListener('activate', function(ev){
+    ev.waitUntil(
+        caches.keys().then(function(cacheNames){
+            
+            let promises = cacheNames.map(cacheName => {
+                if(CACHE_NAME !== cacheName) return caches.delete(cacheName);
+            });
+
+            return Promise.all(promises);
+        })
+    );
+});
