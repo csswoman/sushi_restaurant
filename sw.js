@@ -24,7 +24,30 @@ self.addEventListener('fetch', function(ev){
     ev.respondWith(
         caches.match(ev.request)
         .then(function(response){
-            return response || fetch(ev.request);
+            return searchInCacheOrMakeRequest(ev.request);
+
+        }).catch(function(err){
+            if(ev.request.mode == "navigate")
+            return caches.match(ev.request);
         })
     )
 })
+
+function searchInCacheOrMakeRequest(request){
+    const cachePromise = caches.open(CACHE_NAME);
+    const matchPromise = cachePromise.then(function(cache){
+        return cache.match(request);
+    });
+
+    return Promise.all([cachePromise, matchPromise]).then(function([cache, cacheResponse]){
+        
+        const fetchPromise = fetch(request).then(function(fetchResponse){
+
+            cache.put(request, fetchResponse.clone());
+
+            return fetchResponse;
+        });
+
+        return cacheResponse || fetchPromise;
+    });
+}
