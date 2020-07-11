@@ -18,7 +18,7 @@ module.exports = {
         rules:[ 
             {
                 test: /\.(jpeg|jpg)$/, 
-                loader: 'file-loader'
+                loader: 'url-loader'
               }
         ]
     }
