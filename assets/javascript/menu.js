@@ -1,39 +1,34 @@
-function scrollToElement (element){
-    window.scrollTo({
-        'behavior': 'smooth',
-        'top': element.offsetTop
-    });
+function scrollToElement(element) {
+  window.scrollTo({
+    behavior: "smooth",
+    top: element.offsetTop,
+  });
 }
 
-document.querySelector(".menu")
-    .addEventListener("click", function(){
-        document.querySelector(".menu-screen").classList.add("active");
-    });
+document.querySelector(".menu").addEventListener("click", function () {
+  document.querySelector(".menu-screen").classList.add("active");
+});
 
+document.querySelector(".close").addEventListener("click", function () {
+  document.querySelector(".menu-screen").classList.remove("active");
+});
 
-document.querySelector(".close")
-    .addEventListener("click", function(){
-        document.querySelector(".menu-screen").classList.remove("active");
-    });
+let links = document.querySelectorAll(".menu-screen a");
 
-    let links = document.querySelectorAll(".menu-screen a");
+window.scrollTo({});
 
-    window.scrollTo({
+links.forEach((link) => {
+  link.addEventListener("click", function (ev) {
+    document.querySelector(".menu-screen").classList.remove("active");
 
-    })
+    let paths = this.href.split("/");
 
-    links.forEach(link => {
-        link.addEventListener('click', function(ev){
-            document.querySelector(".menu-screen").classList.remove("active");
+    const selector = paths[paths.length - 1];
 
-            let paths = this.href.split("/");
+    if (window.scrollTo) ev.preventDefault();
 
-            const selector = paths[paths.length - 1];
+    scrollToElement(document.querySelector(selector));
 
-            if(window.scrollTo) ev.preventDefault()
-          
-            scrollToElement(document.querySelector(selector));
-
-            return !!window.scrollTo;
-        })
-    })
+    return !!window.scrollTo;
+  });
+});

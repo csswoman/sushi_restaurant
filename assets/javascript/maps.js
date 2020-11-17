@@ -1,23 +1,22 @@
-import styles from './maps/styles'
+import styles from "./maps/styles";
 
 function initMap() {
+  const coords = {
+    lat: 34.04749,
+    lng: -118.23944,
+  };
 
-    const coords = {
-        lat: 34.047490,
-        lng: -118.239440
-    };
+  let map = new google.maps.Map(document.getElementById("mapa"), {
+    center: coords,
+    zoom: 16,
+    styles: styles,
+  });
 
-    let map = new google.maps.Map(document.getElementById('mapa'), {
-        center: coords,
-        zoom:16,
-        styles: styles
-    });
-
-    let marker = new google.maps.Marker({
-        position: coords,
-        map,
-        title: 'Sushi Bar'
-    })
+  let marker = new google.maps.Marker({
+    position: coords,
+    map,
+    title: "Sushi Bar",
+  });
 }
 
 initMap();

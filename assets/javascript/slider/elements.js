@@ -1,22 +1,23 @@
 const elements = [
-    {
-        title: 'Lorem ipsum dolor',
-        subtitle: 'Impum',
-        image: '../public/images/12.jpg',
-        text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione, placeat.'
-    },
-    {
-        title: 'Lorem Ipsum 2',
-        subtitle: 'Impum 2',
-        image: '../public/images/14.jpg',
-        text: 'Lorem Ipsum fedrfgvr grfgvb fgrd'
-    },
-    {
-        title: 'Lorem Ipsum 3',
-        subtitle: 'Impum 2',
-        image: '../public/images/15.jpg',
-        text: 'Lorem Ipsum fedrfgvr grfgvb fgrd'
-    }
+  {
+    title: "Poke Bowl",
+    subtitle: "Our menu",
+    image: "../public/images/12.jpg",
+    text:
+      "Bowl con base de arroz de sushi bañado en salsa de ostión, semillas de ajonjolí, topping de palta, pescado, cebolla china y kiuri picado.",
+  },
+  {
+    title: "Super Maki Box",
+    subtitle: "Our menu",
+    image: "../public/images/14.jpg",
+    text: "Disfruta de 50 makis variados",
+  },
+  {
+    title: "Temaki",
+    subtitle: "Our menu",
+    image: "../public/images/15.jpg",
+    text: "Cono de alga nori relleno de arroz y langostino empanizado.",
+  },
 ];
 
 export default elements;
