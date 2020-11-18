@@ -17,6 +17,11 @@ figure {
   max-height: 100%;
 }
 
+.text-button {
+  display: flex;
+  justify-content: center;
+}
+
 .btn {
   padding: $large-padding;
   position: relative;
@@ -36,6 +41,9 @@ figure {
     background-color: $primary-color;
     transition: all 0.15s ease-out;
   }
+  &:hover {
+    color: white;
+  }
   &:hover::before {
     height: 100%;
   }
@@ -51,17 +59,18 @@ figure {
   top: 2em;
   right: 2em;
   border-radius: 50%;
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   margin-right: 30px;
   border: solid 1px $primary-color;
+  z-index: 100;
   @include center-vertical-horizontal;
   background-color: #fff;
   @include transition;
   transition-duration: 0.15s;
   cursor: pointer;
   img {
-    height: 50px;
+    height: 40px;
   }
 }
 
@@ -348,7 +357,9 @@ figure {
     }
   }
   .slider .image img {
-    height: 70vh;
+    height: 60vh;
+    width: 80%;
+    object-fit: cover;
   }
 
   .mission .container figure {
